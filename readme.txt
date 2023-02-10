@@ -13,6 +13,15 @@ Though we know what the design should be able to do, we can't be sure of its pre
 This project aims to design a generator that will create a neural network interface given the users' desired design specifications. I can tell the system I want X inputs with W weights and Y outputs, and the design will produce a correct solution everytime.
 
 
+--- Interesting things to Note ---
+This design uses a datapath and control module for the design to work. The datapath consists of one ROM, one RAM, and one MAC (matrix accumulator) for each layer of the neural network. Each layer also has its own control module, which is driven by an FSM to determine when to read, calculate, and write outputs.
+
+This design also uses an ARM's AXI4-Stream protocol to read and write values between neural network layers.
+
+The design is pipelined and parallelized (by users' specification) to increase throughput of the system.
+
+The design can also budget MAC units given the users' specicifications. This is especially useful when targetting an FPGA with limited resources. When given, the generator will produce the best design given the limited resources. If no budget is given, the design will produce the best possible design for performance.
+
 --- Instructions on using files ---
 1. run "make" in linux terminal to compile files.
 
