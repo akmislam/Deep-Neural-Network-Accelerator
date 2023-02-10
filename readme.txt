@@ -3,7 +3,7 @@ ESE 507
 Project 3 - Readme File
 
 --- Description of Project ---
-This project is a hardware generator for a deep neural network accelerator.
+This project is a hardware generator for a deep neural network accelerator (in SystemVerilog).
 
 A neural network is simply a set of inputs (vector) that are crossed with a set of trained weights (matrix) to produce an output (vector).
 This can be represented by a matrix-vector multiplier.
